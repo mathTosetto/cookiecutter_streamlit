@@ -1,13 +1,34 @@
-.PHONY: venv
+.ONESHELL:
+
+VENV = .venv
+PIP = $(VENV)/Scripts/pip
+PYTHON = $(VENV)/Scripts/python
+BIN = $(VENV)/Scripts
+UV = $(VENV)/Scripts/uv
 
 # Default target
-venv: .venv/bin/activate
+init:
+    clean
+    venv
+    setup_dependencies
 
-.venv/bin/activate: requirements.txt
-    @echo "Creating virtual environment..."
-    @rm -rf .venv
-    @python3 -m venv .venv
-    @. .venv/bin/activate; \
-    pip install --upgrade pip setuptools wheel; \
-    pip install uv; \
-    uv pip install -r requirements.txt
+# Clean up files
+clean:
+    rm -rf $(VENV) cdk.out build dist **/*.egg-info .pytest_cache node_modules .coverage
+
+# Create .venv
+venv:
+    python -m venv $(VENV)
+
+# Download the necessary libs
+setup_dependencies:
+    $(PYTHON) -m pip install --upgrade pip
+    $(PIP) install uv
+    $(UV) pip install -r requirements.txt
+
+# Mark targets as phony
+.PHONY:
+    init
+    clean
+    venv
+    setup_dependencies
