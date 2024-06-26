@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.express as px
-from src.streamlit_app.util.data_loader import load_data
+from ..utils.data_loader import load_data
 
 
 def app():
