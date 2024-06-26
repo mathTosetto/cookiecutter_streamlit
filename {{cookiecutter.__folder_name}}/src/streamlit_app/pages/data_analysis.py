@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-from utils.data_loader import load_data
-from utils.data_processor import process_data
+from src.streamlit_app.util.data_loader import load_data
+from src.streamlit_app.util.data_processor import process_data
 
 
 def app():
