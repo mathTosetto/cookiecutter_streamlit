@@ -8,8 +8,6 @@ named ``test_*`` which test a unit of logic.
 To run the tests, run ``pytest`` from the project root directory.
 """
 
-import pytest
-
 
 def test_function():
     pass
