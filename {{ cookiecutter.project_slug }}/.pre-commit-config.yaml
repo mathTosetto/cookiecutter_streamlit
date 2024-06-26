@@ -1,0 +1,15 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: Ruff Linter
+        entry: ruff
+        language: python
+        files: ^oop-retrieve-api-project/
+      - id: ruff-format
+        name: Ruff Formatter
+        entry: ruff format
+        language: python
+        files: ^oop-retrieve-api-project/
