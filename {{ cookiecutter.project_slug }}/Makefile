@@ -25,7 +25,7 @@ init: clean venv setup_dependencies show-info activate
 
 # Clean up files
 clean:
-	rm -rf $(VENV) cdk.out build dist **/*.egg-info .pytest_cache node_modules .coverage
+	rm -rf $(VENV) cdk.out build dist **/*.egg-info .pytest_cache node_modules .coverage .ruff_cache
 
 # Create .venv with specified Python version
 venv:
@@ -36,6 +36,7 @@ setup_dependencies:
 	$(PYTHON) -m pip install --upgrade pip
 	$(PIP) install uv
 	$(UV) pip install -r requirements.txt
+	pre-commit install
 
 # Show Python version and paths
 show-info:
