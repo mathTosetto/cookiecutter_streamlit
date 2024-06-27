@@ -40,6 +40,7 @@ setup_dependencies:
 # Pre-commit setup
 setup_precommit:
 	@echo "Setting up the pre-commit config"
+	pre-commit clean
 	pre-commit install
 	pre-commit autoupdate
 
