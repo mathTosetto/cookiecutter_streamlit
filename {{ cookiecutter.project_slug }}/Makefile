@@ -36,7 +36,11 @@ setup_dependencies:
 	$(PYTHON) -m pip install --upgrade pip
 	$(PIP) install uv
 	$(UV) pip install -r requirements.txt
+
+# Pre-commit setup
+setup_precommit:
 	pre-commit install
+	pre-commit autoupdate
 
 # Show Python version and paths
 show-info:
@@ -60,8 +64,6 @@ activate:
 	@echo ""
 	@echo "On Unix-like systems (Linux, macOS):"
 	@echo "    source $(ACTIVATE)"
-	@echo ""
-	@echo "Note: You need to run this command in your shell, not through make."
 
 # Mark targets as phony
-.PHONY: init clean venv setup_dependencies show-info activate
+.PHONY: init clean venv setup_dependencies setup_precommit show-info activate
