@@ -5,19 +5,18 @@ repos:
     # Ruff version.
     rev: v0.5.0
     hooks:
-      # Run the linter.
       - id: ruff
-        name: ruff
+        name: Ruff Linter
         description: "Run 'ruff' for extremely fast Python linting"
         language: python
-      # Run the formatter.
       - id: ruff-format
-        name: ruff-format
+        name: Ruff Code Format
         description: "Run 'ruff format' for extremely fast Python formatting"
         language: python
   - repo: https://github.com/christophmeissner/pytest-pre-commit
     rev: 1.0.0
     hooks:
     - id: pytest
+      name: Pytest
       pass_filenames: false
       always_run: true
