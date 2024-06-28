@@ -5,3 +5,4 @@ pre-commit~=3.7.1
 pytest~=8.2.2
 ruff~=0.4.9
 streamlit~=1.36.0
+uv~=0.2.17
