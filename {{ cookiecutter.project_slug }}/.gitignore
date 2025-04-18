@@ -8,14 +8,21 @@ code_tips
 __pycache__/
 *.py[cod]
 
+# Notebook
+notebooks/
+
 # C extensions
 *.so
 
 # Venv
 .venv/
 
+# Env
+.env
+
 # pytest
 .pytest_cache/
+htmlcov/
 
 # ruff
 .ruff_cache/
@@ -63,3 +70,18 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+# Outputs
+data/output/
+
+# Poetry
+*.lock
+
+# MacOS
+**/.DS_Store
+
+# Logs
+*.jsonl
+
+# Excalidraw
+diagrams/*.excalidraw
