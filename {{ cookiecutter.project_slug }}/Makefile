@@ -41,7 +41,7 @@ venv:
 	poetry install --quiet
 
 
-# Download the necessary libs.
+# Setup the project environment.
 setup:
 	@echo "Install git"
 	@if [ ! -d .git ]; then \
@@ -49,6 +49,14 @@ setup:
 		git init; \
 	else \
 		echo "Git already initialized."; \
+	fi
+
+	@echo "Rename .env.example to .env"
+	@if [ ! -f .env ]; then \
+		echo "Renaming .env.example to .env..."; \
+		cp .env.example .env; \
+	else \
+		echo ".env already exists."; \
 	fi
 
 	@echo "Install pre-commit"
