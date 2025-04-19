@@ -25,3 +25,9 @@ To get started with this template, follow these steps:
    source .venv/Scripts/activate # Windows
    eval $(poetry env activate) # OS
    ```
+
+Rename .env.template:
+   ```bash
+   cp .env.template .env
+   rm .env.template
+   ```
