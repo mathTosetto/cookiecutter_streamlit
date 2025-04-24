@@ -51,10 +51,11 @@ setup:
 		echo "Git already initialized."; \
 	fi
 
-	@echo "Rename .env.example to .env"
+	@echo "Rename .env.template to .env"
 	@if [ ! -f .env ]; then \
-		echo "Renaming .env.example to .env..."; \
-		cp .env.example .env; \
+		echo "Renaming .env.template to .env..."; \
+		cp .env.template .env; \
+		rm .env.template; \
 	else \
 		echo ".env already exists."; \
 	fi
