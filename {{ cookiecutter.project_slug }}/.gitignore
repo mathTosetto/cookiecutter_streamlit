@@ -78,6 +78,7 @@ data/output/
 *.lock
 
 # MacOS
+.DS_Store
 **/.DS_Store
 
 # Logs
